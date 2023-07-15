@@ -1,5 +1,9 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import navigo from "navigo";
+import HomePages from "./pages/HomePages";
+import { render, router } from "./lib";
 
-createApp(App).mount('#app')
+const app = document.querySelector('#app');
+
+router.on("/", () => render (HomePages, app));
+
+router.resolve();
